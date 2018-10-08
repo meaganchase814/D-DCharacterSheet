@@ -12,3 +12,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.attributesTable {
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+.characterTable {
+  border: 1px solid black;
+  padding: 10px;
+}
+.input {
+  text-align: center;
+}
+.characterSheet{
+  width: 25vw;
+  border: 1px solid black;
+  padding: 10px;
+}
+.character{
+  
+  
+}
+.attributes{
+  border: 1px solid black;
+  
+}
