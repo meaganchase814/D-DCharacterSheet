@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class App extends Component {
       intelligent: 0,
       wisdom: 0,
       charisma: 0,
-      diceRoll: 0,
+      diceRoll20: 0,
+      diceRoll12: 0,
+      diceRoll06: 0,
     }
     
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -29,7 +32,9 @@ class App extends Component {
     this.handleIntelligentChange = this.handleIntelligentChange.bind(this);
     this.handleWisdomChange = this.handleWisdomChange.bind(this);
     this.handleCharismaChange = this.handleCharismaChange.bind(this);
-    this.diceRoll = this.diceRoll.bind(this);
+    this.diceRoll20 = this.diceRoll20.bind(this);
+    this.diceRoll12 = this.diceRoll12.bind(this);
+    this.diceRoll06 = this.diceRoll06.bind(this);
   }
   handleNameChange(event) {
     this.setState({name: event.target.value});
@@ -62,119 +67,183 @@ class App extends Component {
     this.setState({charisma: event.target.value});
   }  
 
-  diceRoll(event) {
+  diceRoll20(event) {
     let roll = Math.floor(Math.random()* 20 + 1)
-    this.setState({diceRoll: roll})
+    this.setState({diceRoll20: roll})
+  }
+  diceRoll12(event) {
+    let rolls = Math.floor(Math.random()* 12 + 1)
+    this.setState({diceRoll12: rolls})
+  }
+  diceRoll06(event) {
+    let rolls = Math.floor(Math.random()* 6 + 1)
+    this.setState({diceRoll06: rolls})
   }
   
 
   render() {
 
     return (
-      <div>
-          <table className="characterTable">
+      <div className="background">
+            <table className="characterTable">
+              <tbody>
+                <tr>
+                  <td className="character">
+                    <label>Name: </label>
+                    <input onChange={this.handleNameChange} type="text" /></td>
+                
+                    <td className="character"><label>Race: </label>  
+                    <select onChange={this.handleRaceChange}>
+                    <option value="human">Human</option>
+                    <option value="elf">Elf</option>
+                    <option value="orc">Orc</option>
+                    <option value="dwarf">Dwarf</option>
+                    <option value="halfling">Halfling</option>
+                    </select>
+                  </td> 
+            
+                  <td className="character">
+                    <label>Class: </label>  
+                    <select onChange={this.handleClassChange}>
+                    <option value="bard">Bard</option>
+                    <option value="monk">Monk</option>
+                    <option value="druid">Druid</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="wizard">Wizard</option>
+                    </select>
+                  </td> 
+            
+                  <td className="character">
+                    <label>Level: </label>
+                    <input onChange={this.handleLevelChange} type="text" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br></br>
+          
+            <table className="dice">
+              <tbody>
+                <tr>
+                  <td>
+                    <img className="diceRoll" alt=""  src="https://cdn.pixabay.com/photo/2017/08/31/04/01/d20-2699387_960_720.png" onClick={this.diceRoll20}  />
+                    <div>{this.state.diceRoll20}</div>
+                  </td>
+                  <td>
+                    <img className="diceRoll" alt=""  src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/107324/Dice7.png" onClick={this.diceRoll12}  />
+                    <div>{this.state.diceRoll12}</div>
+                  </td>
+                  <td>
+                  <img className="diceRoll" alt=""  src="https://cdn2.iconfinder.com/data/icons/roleplay-and-tabletop-dice-glyph/430/2_glyph-512.png" onClick={this.diceRoll06}  />
+                    <div>{this.state.diceRoll06}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>  
+            
+          
+          <br></br>
+          <br></br>
+
+          <table className="attributesTable">
           <tbody>
-            <tr>
-        <td><label>Name: </label>
-        <input onChange={this.handleNameChange} type="text" />
-       </td>
-        <td><label>Race: </label>  
-        <select onChange={this.handleRaceChange}>
-        <option value="human">Human</option>
-        <option value="elf">Elf</option>
-        <option value="orc">Orc</option>
-        <option value="dwarf">Dwarf</option>
-        <option value="halfling">Halfling</option>
-        </select> 
-        </td>
-        <td><label>Class: </label>  
-        <select onChange={this.handleClassChange}>
-        <option value="bard">Bard</option>
-        <option value="monk">Monk</option>
-        <option value="druid">Druid</option>
-        <option value="paladin">Paladin</option>
-        <option value="rogue">Rogue</option>
-        <option value="ranger">Ranger</option>
-        <option value="wizard">Wizard</option>
-        </select> 
-        </td>
-        <td><label>Level: </label>
-        <input onChange={this.handleLevelChange} type="text" />
-        </td>
-        </tr>
-        </tbody>
-        </table>
+          <tr>
+            <td><label>
+            Strength:  
+          </label></td></tr>
+          <tr>
+            <td><input onChange={this.handleStrengthChange} type="text" className="input" /></td>
+          </tr>
+          <tr><td><label>
+            Dexterity:  
+          </label></td></tr>
+          <tr><td>
+          <input onChange={this.handleDexterityChange} type="text" className="input" /></td>
+          </tr>
+          <tr><td><label>
+            Constitution: 
+          </label></td></tr> 
+          <tr><td>
+          <input onChange={this.handleConstitutionChange} type="text" className="input" /></td>
+          </tr>
+          <tr><td><label>
+            Intelligent:  
+          </label></td></tr> 
+          <tr><td>
+          <input onChange={this.handleIntelligentChange} type="text" className="input" /></td>
+          </tr>
+          <tr><td><label>
+            Wisdom:  
+          </label></td></tr>
+          <tr><td>
+          <input onChange={this.handleWisdomChange} type="text" className="input" /></td>
+          </tr>
+          <tr><td><label>
+            Charisma:  
+          </label></td></tr> 
+          <tr><td>
+          <input onChange={this.handleCharismaChange} type="text" className="input" /></td>
+          </tr>
+          </tbody>
+          </table>
+          <br></br>
+          <br></br>
+        
 
-        <div className="diceRoll">
-          <button onClick={this.diceRoll}> DiCe RoLl </button>
-          <div>{this.state.diceRoll}</div>
+          <div>
+            <table className="characterSheet">
+            <tbody>
+              <tr>
+                <td>
+                  Name:
+                </td>
+                <td class="info">
+                  {this.state.name}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Race:
+                </td>
+                <td class="info">
+                  {this.state.race}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Class:
+                </td>
+                <td class="info">
+                  {this.state.class}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Level:
+                </td>
+                <td class="info">
+                  {this.state.level}
+                </td>
+              </tr>
+            </tbody>
+           </table>
+            <br></br><br></br>
+            <div className="characterSheet">
+              <div>Strength: {this.state.strength}</div>
+              <div>Dexterity: {this.state.dexterity}</div>
+              <div>Constitution: {this.state.constitution}</div>
+              <div>Intelligent: {this.state.intelligent}</div>
+              <div>Wisdom: {this.state.wisdom}</div>
+              <div>Charisma: {this.state.charisma}</div>
+            </div>
+          </div>
         </div>
-
-        <br></br>
-        <table className="attributesTable">
-        <tbody>
-        <tr>
-          <td><label>
-          Strength:  
-        </label></td></tr>
-        <tr>
-          <td><input onChange={this.handleStrengthChange} type="text" className="input" /></td>
-        </tr>
-        <tr><td><label>
-          Dexterity:  
-        </label></td></tr>
-        <tr><td>
-        <input onChange={this.handleDexterityChange} type="text" /></td>
-        </tr>
-        <tr><td><label>
-          Constitution: 
-        </label></td></tr> 
-        <tr><td>
-        <input onChange={this.handleConstitutionChange} type="text" /></td>
-        </tr>
-        <tr><td><label>
-          Intelligent:  
-        </label></td></tr> 
-        <tr><td>
-        <input onChange={this.handleIntelligentChange} type="text" /></td>
-        </tr>
-        <tr><td><label>
-          Wisdom:  
-        </label></td></tr>
-        <tr><td>
-        <input onChange={this.handleWisdomChange} type="text" /></td>
-        </tr>
-        <tr><td><label>
-          Charisma:  
-        </label></td></tr> 
-        <tr><td>
-        <input onChange={this.handleCharismaChange} type="text" /></td>
-        </tr>
-        </tbody>
-        </table>
-        <br></br>
-        <br></br>
       
-
-        <div>
-          <div className="characterSheet">
-            <div>Name: {this.state.name}</div>
-            <div>Race: {this.state.race}</div>
-            <div>Class: {this.state.class}</div>
-            <div>Level: {this.state.level}</div>
-          </div>
-          <br></br><br></br>
-          <div className="characterSheet">
-            <div>Strength: {this.state.strength}</div>
-            <div>Dexterity: {this.state.dexterity}</div>
-            <div>Constitution: {this.state.constitution}</div>
-            <div>Intelligent: {this.state.intelligent}</div>
-            <div>Wisdom: {this.state.wisdom}</div>
-            <div>Charisma: {this.state.charisma}</div>
-          </div>
-        </div>
-      </div>
+      
     );
+    
     
   }
 }
