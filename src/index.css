@@ -16,6 +16,7 @@ body {
   padding: 10px;
   margin-left: 20px;
   background-color: rgba(247, 233, 170, 0.753);
+  display: inline-block;
   
 }
 .characterTable {
@@ -29,16 +30,19 @@ body {
 input[type=text]:focus {
   text-align: center;
   border: 3px solid rgb(126, 88, 53);
+ 
 }
-.input {
-  text-align: center;
+.textbox {
+  width: 40px;
 }
+
 .characterSheet{
   width: 25vw;
   border: 7px double rgb(112, 85, 49);
   padding: 10px;
   margin-left: 20px;
   background-color: rgba(247, 233, 170, 0.603);
+  
 }
 .character{
   padding: 5px;
@@ -73,5 +77,34 @@ input[type=text]:focus {
 }
 .info{
   font-family: 'Architects Daughter', cursive;
+
 }
+.divider {
+  border-bottom: 5px double rgb(112, 85, 49);
+  border-width: 100%;
+}
+img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
 

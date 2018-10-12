@@ -148,49 +148,196 @@ class App extends Component {
           <br></br>
 
           <table className="attributesTable">
-          <tbody>
-          <tr>
-            <td><label>
-            Strength:  
-          </label></td></tr>
-          <tr>
-            <td><input onChange={this.handleStrengthChange} type="text" className="input" /></td>
-          </tr>
-          <tr><td><label>
-            Dexterity:  
-          </label></td></tr>
-          <tr><td>
-          <input onChange={this.handleDexterityChange} type="text" className="input" /></td>
-          </tr>
-          <tr><td><label>
-            Constitution: 
-          </label></td></tr> 
-          <tr><td>
-          <input onChange={this.handleConstitutionChange} type="text" className="input" /></td>
-          </tr>
-          <tr><td><label>
-            Intelligent:  
-          </label></td></tr> 
-          <tr><td>
-          <input onChange={this.handleIntelligentChange} type="text" className="input" /></td>
-          </tr>
-          <tr><td><label>
-            Wisdom:  
-          </label></td></tr>
-          <tr><td>
-          <input onChange={this.handleWisdomChange} type="text" className="input" /></td>
-          </tr>
-          <tr><td><label>
-            Charisma:  
-          </label></td></tr> 
-          <tr><td>
-          <input onChange={this.handleCharismaChange} type="text" className="input" /></td>
-          </tr>
-          </tbody>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                  
+                  <label class="container">Strength:</label></td>
+              </tr>
+              <tr>
+                <td><input onChange={this.handleStrengthChange} type="text" className="textbox" /></td>
+              </tr>
+              <tr>
+                <td>
+                <input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <label class="container">Dexterity:</label></td>
+              </tr>
+              <tr>
+                <td><input onChange={this.handleDexterityChange} type="text" className="textbox" /></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <label class="container">Constitution:</label></td>
+              </tr> 
+              <tr>
+                <td><input onChange={this.handleConstitutionChange} type="text" className="textbox" /></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <label class="container">Intelligent:</label></td>
+              </tr> 
+              <tr>
+                <td><input onChange={this.handleIntelligentChange} type="text" className="textbox" /></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <label class="container">Wisdom:</label></td>
+              </tr>
+              <tr>
+                <td><input onChange={this.handleWisdomChange} type="text" className="textbox" /></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <label class="container">Charisma:</label></td>
+              </tr> 
+              <tr>
+                <td><input onChange={this.handleCharismaChange} type="text" className="textbox" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="attributesTable">
+            <tbody>
+              <tr><td>Ability Checks</td></tr>
+              <br></br>
+                <tr>
+                  <td><label>Acrobatics:
+                  <input onChange={this.handleWisdomChange} type="text" className="textbox"/></label>
+                  </td>
+
+            
+                  <td>
+                  <label class="container">Medicine
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+          
+              <tr>
+                <td>
+                <label class="container">Animal Handling
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                
+                <td>
+                <label class="container">Nature
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+          
+              <tr>
+                <td>
+                <label class="container">Arcana
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Perception
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">Athletics
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Performance
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">Deception
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Persuasion                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">History
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Religious
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">Insight
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Slight of Hand
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">Intimidation
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Stealth
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <label class="container">Investigation
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+                <td>
+                <label class="container">Survival
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                </label>
+                </td>
+              </tr>
+            </tbody>
           </table>
           <br></br>
           <br></br>
         
+          <div className="divider"></div><br></br>
 
           <div>
             <table className="characterSheet">
@@ -230,17 +377,37 @@ class App extends Component {
             </tbody>
            </table>
             <br></br><br></br>
-            <div className="characterSheet">
-              <div>Strength: {this.state.strength}</div>
-              <div>Dexterity: {this.state.dexterity}</div>
-              <div>Constitution: {this.state.constitution}</div>
-              <div>Intelligent: {this.state.intelligent}</div>
-              <div>Wisdom: {this.state.wisdom}</div>
-              <div>Charisma: {this.state.charisma}</div>
-            </div>
+            <table className="characterSheet">
+              <tbody>
+                <tr>
+                  <td>Strength: </td>
+                  <td className="info">{this.state.strength}</td>
+                </tr>
+                <tr>
+                  <td>Dexterity: </td>
+                  <td className="info">{this.state.dexterity}</td>
+                </tr>
+                <tr> 
+                  <td>Constitution: </td>
+                  <td className="info">{this.state.constitution}</td>
+                </tr>
+                <tr>
+                  <td>Intelligent: </td>
+                  <td className="info">{this.state.intelligent}</td>
+                </tr>
+                <tr>
+                  <td>Wisdom: </td>
+                  <td className="info">{this.state.wisdom}</td>
+                </tr>
+                <tr>
+                  <td>Charisma: </td>
+                  <td className="info">{this.state.charisma}</td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
-        </div>
-      
+      </div>
       
     );
     
