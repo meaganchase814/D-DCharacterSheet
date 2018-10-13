@@ -31,7 +31,27 @@ class App extends Component {
     this.handleConstitutionChange = this.handleConstitutionChange.bind(this);
     this.handleIntelligentChange = this.handleIntelligentChange.bind(this);
     this.handleWisdomChange = this.handleWisdomChange.bind(this);
-    this.handleCharismaChange = this.handleCharismaChange.bind(this);
+    
+    this.handleAcrobaticsChange = this.handleAcrobaticsChange.bind(this);
+    this.handleAnimalHandlingChange = this.handleAnimalHandlingChange.bind(this);
+    this.handleArcanaChange = this.handleArcanaChange.bind(this);
+    this.handleAthleticsChange = this.handleAthleticsChange.bind(this);
+    this.handleDeceptionChange = this.handleDeceptionChange.bind(this);
+    this.handleHistoryChange = this.handleHistoryChange.bind(this);
+    this.handleInsightChange = this.handleInsightChange.bind(this);
+    this.handleIntimidationChange = this.handleIntimidationChange.bind(this);
+    this.handleInvestigationChange = this.handleInvestigationChange.bind(this);
+    this.handleMedicineChange = this.handleMedicineChange.bind(this);
+    this.handleNatureChange = this.handleNatureChange.bind(this);
+    this.handlePerceptionChange = this.handlePerceptionChange.bind(this);
+    this.handlePerformanceChange = this.handlePerformanceChange.bind(this);
+    this.handlePersuasionChange = this.handlePersuasionChange.bind(this);
+    this.handleReligousChange = this.handleReligousChange.bind(this);
+    this.handleSlightofHandChange = this.handleSlightofHandChange.bind(this);
+    this.handleStealthChange = this.handleStealthChange.bind(this);
+    this.handleSurvivalChange = this.handleSurvivalChange.bind(this);
+
+    
     this.diceRoll20 = this.diceRoll20.bind(this);
     this.diceRoll12 = this.diceRoll12.bind(this);
     this.diceRoll06 = this.diceRoll06.bind(this);
@@ -79,7 +99,61 @@ class App extends Component {
     let rolls = Math.floor(Math.random()* 6 + 1)
     this.setState({diceRoll06: rolls})
   }
-  
+  handleAcrobaticsChange(event) {
+    this.setState({acrobatics: event.target.value});
+  }
+  handleAnimalHandlingChange(event) {
+    this.setState({animalHandling: event.target.value});
+  }
+  handleArcanaChange(event) {
+    this.setState({arcana: event.target.value});
+  }
+  handleAthleticsChange(event) {
+    this.setState({athletics: event.target.value});
+  }
+  handleDeceptionChange(event) {
+    this.setState({deception: event.target.value});
+  }
+  handleHistoryChange(event) {
+    this.setState({history: event.target.value});
+  }
+  handleInsightChange(event) {
+    this.setState({insight: event.target.value});
+  }
+  handleInvestigationChange(event) {
+    this.setState({investigation: event.target.value});
+  }
+  handleIntimidationChange(event) {
+    this.setState({intimidation: event.target.value});
+  }
+    
+  handleMedicineChange(event) {
+    this.setState({medicine: event.target.value});
+  }
+  handleNatureChange(event) {
+    this.setState({nature: event.target.value});
+  }
+  handlePerceptionChange(event) {
+    this.setState({perception: event.target.value});
+  }
+  handlePerformanceChange(event) {
+    this.setState({performance: event.target.value});
+  }
+  handlePersuasionChange(event) {
+    this.setState({persuasion: event.target.value});
+  }
+  handleReligousChange(event) {
+    this.setState({religous: event.target.value});
+  }
+  handleSlightofHandChange(event) {
+    this.setState({slightofhand: event.target.value});
+  }
+  handleStealthChange(event) {
+    this.setState({stealth: event.target.value});
+  }
+  handleSurvivalChange(event) {
+    this.setState({survival: event.target.value});
+  }
 
   render() {
 
@@ -94,6 +168,7 @@ class App extends Component {
                 
                     <td className="character"><label>Race: </label>  
                     <select onChange={this.handleRaceChange}>
+                    <option value="race">Race</option>
                     <option value="human">Human</option>
                     <option value="elf">Elf</option>
                     <option value="orc">Orc</option>
@@ -104,7 +179,8 @@ class App extends Component {
             
                   <td className="character">
                     <label>Class: </label>  
-                    <select onChange={this.handleClassChange}>
+                    <select onChange={this.handleClassChange} >
+                    <option value="class">Class</option>
                     <option value="bard">Bard</option>
                     <option value="monk">Monk</option>
                     <option value="druid">Druid</option>
@@ -207,133 +283,82 @@ class App extends Component {
               <br></br>
                 <tr>
                   <td><label>Acrobatics:
-                  <input onChange={this.handleWisdomChange} type="text" className="textbox"/></label>
+                  <input onChange={this.handleAcrobaticsChange} type="text" className="textbox"/></label>
                   </td>
 
-            
-                  <td>
-                  <label class="container">Medicine
-                  <input type="checkbox" />
-                  <span class="checkmark"></span>
-                  </label>
+                  <td><label>Medicine:
+                  <input onChange={this.handleMedicineChange} type="text" className="textbox"/></label>
                   </td>
                 </tr>
           
-              <tr>
-                <td>
-                <label class="container">Animal Handling
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                
-                <td>
-                <label class="container">Nature
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
+                <tr>
+                  <td><label>Animal Handling:
+                    <input onChange={this.handleAnimalHandlingChange} type="text" className="textbox"/></label>
+                  </td>
+                  
+                  <td><label>Nature:
+                    <input onChange={this.handleNatureChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
           
-              <tr>
-                <td>
-                <label class="container">Arcana
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Perception
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">Athletics
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Performance
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">Deception
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Persuasion                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">History
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Religious
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">Insight
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Slight of Hand
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">Intimidation
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Stealth
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <label class="container">Investigation
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-                <td>
-                <label class="container">Survival
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                </label>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                <tr>
+                  <td><label>Arcana:
+                    <input onChange={this.handleArcanaChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Perception:
+                    <input onChange={this.handlePerceptionChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Athletics:
+                    <input onChange={this.handleAthleticsChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Performance:
+                    <input onChange={this.handlePerformanceChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Deception:
+                    <input onChange={this.handleDeceptionChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Persuasion:
+                    <input onChange={this.handlePersuasionChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>History:
+                    <input onChange={this.handleHistoryChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Religous:
+                    <input onChange={this.handleReligousChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Insight:
+                    <input onChange={this.handleInsightChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Slight of Hand:
+                    <input onChange={this.handleSlightofHandChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Intimidatoin:
+                    <input onChange={this.handleIntimidationChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Stealth:
+                    <input onChange={this.handleStealthChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Investigation:
+                    <input onChange={this.handleInvestigationChange} type="text" className="textbox"/></label>
+                  </td>
+                  <td><label>Survival:
+                    <input onChange={this.handleSurvivalChange} type="text" className="textbox"/></label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           <br></br>
           <br></br>
         
@@ -402,6 +427,64 @@ class App extends Component {
                 <tr>
                   <td>Charisma: </td>
                   <td className="info">{this.state.charisma}</td>
+                </tr>
+              </tbody>
+            </table>
+            <table className="characterSheet">
+              <tbody>
+                <tr>
+                  <td>Acrobatics: </td>
+                  <td className="info">{this.state.acrobatics}</td>
+                  <td>Medicine: </td>
+                  <td className="info">{this.state.medicine}</td>
+                </tr>
+                <tr>
+                  <td>Animal Handling: </td>
+                  <td className="info">{this.state.animalHandling}</td>
+                  <td>Nature: </td>
+                  <td className="info">{this.state.nature}</td>
+                </tr>
+                <tr>
+                  <td>Arcana: </td>
+                  <td className="info">{this.state.arcana}</td>
+                  <td>Perception: </td>
+                  <td className="info">{this.state.perception}</td>
+                </tr>
+                <tr>
+                  <td>Athletics: </td>
+                  <td className="info">{this.state.athletics}</td>
+                  <td>Performance: </td>
+                  <td className="info">{this.state.performance}</td>
+                </tr>
+                <tr>
+                  <td>Deception: </td>
+                  <td className="info">{this.state.deception}</td>
+                  <td>Perception: </td>
+                  <td className="info">{this.state.perception}</td>
+                </tr>
+                <tr>
+                  <td>History: </td>
+                  <td className="info">{this.state.history}</td>
+                  <td>Religious: </td>
+                  <td className="info">{this.state.religious}</td>
+                </tr>
+                <tr>
+                  <td>Insight: </td>
+                  <td className="info">{this.state.insight}</td>
+                  <td>Slight of Hand: </td>
+                  <td className="info">{this.state.slightofhand}</td>
+                </tr>
+                <tr>
+                  <td>Intimidation: </td>
+                  <td className="info">{this.state.intimidation}</td>
+                  <td>Stealth: </td>
+                  <td className="info">{this.state.stealth}</td>
+                </tr>
+                <tr>
+                  <td>Investigation: </td>
+                  <td className="info">{this.state.investigation}</td>
+                  <td>Survival: </td>
+                  <td className="info">{this.state.survival}</td>
                 </tr>
               </tbody>
             </table>
